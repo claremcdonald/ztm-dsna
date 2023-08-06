@@ -57,3 +57,23 @@ getPairs(boxes);
 // O(n * n)
 // O(n^2)
 // Quadratic time
+
+// Section 4: How to Solve Coding Problems
+
+// Return true is a pair of two numbers from the array is equal to the sum 8.
+// Quadratic time, inefficient solution:
+
+const numbersOne = [1, 2, 3, 9];
+const numbersTwo = [1, 2, 4, 4];
+
+function findPairWithSum(array) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === 8) return true;
+    }
+  }
+  return false;
+}
+
+console.log(findPairWithSum(numbersOne));
+console.log(findPairWithSum(numbersTwo));
