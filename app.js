@@ -60,7 +60,7 @@ getPairs(boxes);
 
 // Section 4: How to Solve Coding Problems
 
-// Return true is a pair of two numbers from the array is equal to the sum 8.
+// Return true if a pair of two numbers from the array is equal to the sum 8.
 // Quadratic time, inefficient solution:
 
 const numbersOne = [1, 2, 3, 9];
@@ -82,7 +82,7 @@ console.log(findPairWithSum(numbersTwo));
 // For example:
 // const array1 = ['a', 'b', 'c', 'x'];
 // const array2 = ['z', 'y', 'i'];
-// should return flase.
+// should return false.
 // --------
 const array1 = ['a', 'b', 'c', 'x'];
 const array2 = ['z', 'y', 'x'];
@@ -144,3 +144,27 @@ function containsCommonItem2(array1, array2) {
 }
 
 console.log(containsCommonItem2(array1, array2));
+
+// 59. Google Interview On Your Own
+
+// Return true if a pair of two numbers from the array is equal to the sum 8.
+
+const numbers1 = [1, 2, 3, 9];
+const numbers2 = [1, 2, 4, 4];
+
+// Brute force
+function isThereAPair(array, sum) {
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[i] + array[j] === sum) return true;
+    }
+  }
+  return false;
+}
+
+console.log('1.', isThereAPair(numbers1, 8));
+console.log('2.', isThereAPair(numbers2, 8));
+
+// Time Complexity: O(a * b)
+
+// Better solution
