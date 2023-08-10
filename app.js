@@ -168,3 +168,21 @@ console.log('2.', isThereAPair(numbers2, 8));
 // Time Complexity: O(a * b)
 
 // Better solution
+//create a set
+function isThereAPair2(array, sum) {
+  const setOfComps = new Set();
+
+  // loop through the array
+  for (let i = 0; i < array.length; i++) {
+    if (setOfComps.has(array[i])) return true;
+    // complements to the array as we go
+    setOfComps.add(sum - array[i]);
+  }
+
+  return false;
+}
+
+console.log('1.', isThereAPair2(numbers1, 8));
+console.log('2.', isThereAPair2(numbers2, 8));
+
+// Time Complexity: O(n)
